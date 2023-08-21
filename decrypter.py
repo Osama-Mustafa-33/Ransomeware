@@ -28,7 +28,7 @@ if os.path.exists(key):
             file_extension = os.path.splitext(file)
 
             # Execlude Python scripts & key from decryption
-            if file.lower().endswith(('.py', '.key')):
+            if file.lower().endswith(('.py', '.key', '.MD')):
                 continue
 
             # Execlude directories from decryption
