@@ -6,11 +6,17 @@
 
 ## How it works
 1. Clone the project
-2. In the current directory of project, open terminal and add this command to encrypt files "./encrypt.py"
-3. You will notice that, the attached demo files are encrypted
-4. To decrypt files, use the command "./decrypt.py"
+2. In the current directory of project, open terminal and add this command "./encrypt.py" to encrypt files 
+3. You will notice that the attached demo files are encrypted
+4. To decrypt files use the command "./decrypt.py"
 5. Type the secret password "hello world" to proceed in decrypting process
 6. You will notice that all files are back again :) 
 
 ## Special Thanks
 - https://youtu.be/UtMMjXOlRQc?si=Qq5i6qm-tHwYuFai By NetworkChuck 
+
+
+## Demo Files Credit
+- demo mp3: https://file-examples.com
+- demo image: https://unsplash.com 
+

