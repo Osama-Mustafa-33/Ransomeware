@@ -18,7 +18,6 @@ if not os.path.exists(current_key):
 
     if os.path.exists(current_key): 
         
-        # Get all files from the current directory
         for file in files:
 
             file_extension = os.path.splitext(file)
