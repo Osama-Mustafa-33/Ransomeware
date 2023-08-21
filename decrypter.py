@@ -39,6 +39,7 @@ if os.path.exists(key):
                 file_content = the_file.read()
 
             decrypted_content = Fernet(encryption_key).decrypt(file_content)
+            
             with open(file, 'wb') as the_file:
                 the_file.write(decrypted_content)
 
