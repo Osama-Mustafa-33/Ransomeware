@@ -3,11 +3,11 @@
 import os
 from cryptography.fernet import Fernet
 
-files = os.listdir()
-targets = []
-key = 'key.key'
+files           = os.listdir()
+targets         = []
+key             = 'key.key'
 secret_password = 'hello world'
-
+excluded_files = ('.py', '.key', '.md')
 
 # Check if key exist in the current directory
 if os.path.exists(key):
@@ -21,14 +21,12 @@ if os.path.exists(key):
         with (open(key, 'rb')) as the_key:
             encryption_key = the_key.read()
 
-
-        # Get all files from the current directory
         for file in files:
 
-            file_extension = os.path.splitext(file)
+            file_extension = os.path.splitext(file)[1].lower()
 
             # Execlude Python scripts & key from decryption
-            if file.lower().endswith(('.py', '.key', '.MD')):
+            if file_extension in excluded_files:
                 continue
 
             # Execlude directories from decryption
@@ -50,8 +48,8 @@ if os.path.exists(key):
         except OSError as e:
             print(f"Error in deleting key{e}")
 
+        print('Congratulations ... Your Files Have Been Decrypted Successfully')
 
-        print('Congratulations ... Your Files Has Been Decrypted Successfully')
     else:
         print('Password is wrong!')
 else:
