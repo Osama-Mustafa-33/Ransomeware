@@ -12,11 +12,11 @@
 5. Type the secret password "hello world" to proceed in decrypting process
 6. You will notice that all files are back again :) 
 
+## Demo Files Credit
+- demo MP3: https://file-examples.com
+- demo image: https://unsplash.com 
+
 ## Special Thanks
 - https://youtu.be/UtMMjXOlRQc?si=Qq5i6qm-tHwYuFai By NetworkChuck 
 
-
-## Demo Files Credit
-- demo mp3: https://file-examples.com
-- demo image: https://unsplash.com 
 
